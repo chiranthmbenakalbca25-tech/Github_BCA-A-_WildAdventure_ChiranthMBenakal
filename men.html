@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Men's Store</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f5f7fa;
+    }
+
+    header {
+      background: #003366;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+    }
+
+    h2 {
+      color: #003366;
+      text-align: center;
+      margin-top: 30px;
+      font-size: 28px;
+    }
+
+    /* PRODUCT GRID */
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 25px;
+      padding: 40px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    /* PRODUCT CARD */
+    .card {
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      padding-bottom: 20px;
+      text-align: center;
+      transition: transform 0.2s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .card img {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+      border-top-left-radius: 10px;
+      border-top-right-radius: 10px;
+    }
+
+    .title {
+      font-size: 18px;
+      font-weight: bold;
+      margin-top: 15px;
+    }
+
+    .price {
+      font-size: 20px;
+      color: #333;
+      margin: 10px 0;
+    }
+
+    .btn {
+      background: #1dbf73;
+      color: white;
+      border: none;
+      padding: 10px 18px;
+      font-size: 16px;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+
+    .btn:hover {
+      background: #17a864;
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <h1>Men's Clothing & Gear</h1>
+</header>
+
+<h2>Explore Our Latest Collection</h2>
+
+<!-- PRODUCT GRID START -->
+<div class="product-grid">
+
+  <!-- PRODUCT 1 -->
+  <div class="card">
+    <img src="https://www.appalachianoutfitters.com/cdn/shop/files/sherpa-adventure-gear-sherpa-adventure-gear-tenbu-hat.webp?v=1747933183&width=533">
+    <div class="title">HAT</div>
+    <div class="price">₹200</div>
+    <button class="btn" onclick="addToCart('Hat')">Add to Cart</button>
+    
+  </div>
+
+  <!-- PRODUCT 2 -->
+  <div class="card">
+    <img src="https://m.media-amazon.com/images/I/61oiq0lMXLL._AC_UY1100_.jpg">
+    <div class="title"> Jacket</div>
+    <div class="price">₹999</div>
+    <button class="btn" onclick="addToCart('Jacket')">Add to Cart</button>
+  </div>
+
+  <!-- PRODUCT 3 -->
+  <div class="card">
+    <img src="https://m.media-amazon.com/images/I/81Mc+CkJzkL._AC_UY1100_.jpg">
+    <div class="title">Camping Backpack 45L</div>
+    <div class="price">₹499</div>
+    <button class="btn" onclick="addToCart('Camping Backpack 45L')">Add to Cart</button>
+  </div>
+
+  <!-- PRODUCT 4 -->
+  <div class="card">
+    <img src="https://media.gq-magazine.co.uk/photos/67dab8ba51ceaf17c758f1ae/3:2/w_1620,h_1080,c_limit/Hikingboots_HP.jpg">
+    <div class="title">hiking boots</div>
+    <div class="price">₹1,299</div>
+    <button class="btn" onclick="addToCart('Hiking Boots')">Add to Cart</button>
+  </div>
+
+  <!-- PRODUCT 5 -->
+  <div class="card">
+    <img src="https://miro.medium.com/1*w57kpTPFxVkVEb2Y_6eNSw.jpeg">
+    <div class="title">Ear Muffs</div>
+    <div class="price">₹199</div>
+    <button class="btn" onclick="addToCart('Ear Muffs')">Add to Cart</button>
+  </div>
+
+  <!-- PRODUCT 6 -->
+  <div class="card">
+    <img src="https://mountainequipment.com/cdn/shop/products/Mens-Adventure-Light-Pants-Sage_535x.jpg?v=1689047919">
+    <div class="title">The Adventure Light Pants</div>
+    <div class="price">₹2,100</div>
+    <button class="btn" onclick="addToCart('The Adventure Light Pants')">Add to Cart</button>
+  </div>
+
+  <!-- PRODUCT 7 -->
+  <div class="card">
+    <img src="https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcR3WPnnmG90TdhrVYOZPBdsIBrE3AZaM971FiPCcuoofy7qibnjzNem-zl1BR7Pbm-qzEmO5z3esJcxrZgBsZ52AiUmJyNdr9sZvtADAxoQuYVFAte4kMmL">
+    <div class="title"> T-Shirt Mens Blue Dry Fit Activewear Ultra-Light T-Shirt</div>
+    <div class="price">₹499</div>
+    <button class="btn" onclick="addToCart('T-Shirt Mens Blue Dry Fit Activewear Ultra-Light T-Shirt')">Add to Cart</button>
+  </div>
+
+  <!-- PRODUCT 8 -->
+  <div class="card">
+    <img src="https://contents.mediadecathlon.com/p2573103/ada9288d07a53ad6914050cf6a87a2e9/p2573103.jpg">
+    <div class="title">gloves</div>
+    <div class="price">₹699</div>
+    <button class="btn" onclick="addToCart('Gloves')">Add to Cart</button>
+  </div>
+
+  <!-- PRODUCT 9 -->
+  <div class="card">
+    <img src="https://m.media-amazon.com/images/I/51oghtijitL._AC_UF1000,1000_QL80_.jpg">
+    <div class="title">Flashlight</div>
+    <div class="price">₹99</div>
+    <button class="btn" onclick="addToCart('Flashlight')">Add to Cart</button>
+  </div>
+
+  <!-- PRODUCT 10 -->
+  <div class="card">
+    <img src="https://cdn.shopify.com/s/files/1/0293/0586/4331/files/Kingsman_Clear_Black_Square_Sunglasses_17d5d53a-5855-4f36-8113-f5efc7abe4b0.webp?v=1754551015">
+    <div class="title">sunglasses</div>
+    <div class="price">₹3,999</div>
+    <button class="btn" onclick="addToCart('Sunglasses')">Add to Cart</button>
+  </div>
+
+</div>
+<header>
+  <h1>Men's Clothing & Gear</h1>
+</header>
+
+<!-- ✅ Search bar for this page -->
+<div style="text-align:center; margin-top:15px;">
+  <input 
+    type="text" 
+    id="pageSearchInput" 
+    placeholder="Search in men's products..."
+    style="padding:8px; width:220px; border-radius:4px; border:1px solid #ccc;"
+  >
+  <button 
+    onclick="filterCards()" 
+    style="padding:8px 14px; border:none; border-radius:4px; background:#003366; color:white; cursor:pointer;"
+  >
+    Search
+  </button>
+</div>
+
+<script>
+  function addToCart(product) {
+    alert(product + " has been added to cart !");
+  }
+
+  function filterCards() {
+    const query = document.getElementById("pageSearchInput").value
+      .trim()
+      .toLowerCase();
+
+    const cards = document.querySelectorAll(".card");
+
+    cards.forEach(card => {
+      const titleEl = card.querySelector(".title");
+      const titleText = titleEl ? titleEl.textContent.toLowerCase() : "";
+
+      if (query === "" || titleText.includes(query)) {
+        card.style.display = "block";   // show
+      } else {
+        card.style.display = "none";    // hide
+      }
+    });
+  }
+
+  // Optional: live search while typing
+  document.addEventListener("DOMContentLoaded", () => {
+    const input = document.getElementById("pageSearchInput");
+    if (input) {
+      input.addEventListener("keyup", filterCards);
+    }
+  });
+</script>
+
+  
+</script>
+
+</body>
+</html>

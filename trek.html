@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trekking Gear Store</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f7f7f7;
+    }
+
+    h1 {
+      text-align: center;
+      padding: 25px 0;
+      font-size: 32px;
+      color: #222;
+    }
+
+    /* PRODUCT GRID */
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 25px;
+      padding: 40px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .card {
+      background: white;
+      border-radius: 10px;
+      border: 1px solid #ddd;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+      padding-bottom: 20px;
+      text-align: center;
+      transition: transform 0.2s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .card img {
+      width: 100%;
+      height: 230px;
+      object-fit: cover;
+      border-radius: 10px 10px 0 0;
+    }
+
+    .title {
+      font-size: 18px;
+      font-weight: bold;
+      margin-top: 12px;
+    }
+
+    .price {
+      font-size: 20px;
+      color: #444;
+      margin: 8px 0;
+    }
+
+    .btn {
+      background: #28a745;
+      color: white;
+      border: none;
+      padding: 10px 18px;
+      font-size: 16px;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+
+    .btn:hover {
+      background: #1e7a34;
+    }
+  </style>
+</head>
+
+<body>
+
+<h1>Essential Trekking Gear</h1>
+
+<div class="product-grid">
+
+  <!-- 1: Camping Tent -->
+  <div class="card">
+    <img src="https://m.media-amazon.com/images/I/51zpbe92caL._AC_UF894,1000_QL80_.jpg">
+    <div class="title">2-Person Camping Tent</div>
+    <div class="price">₹8,999</div>
+    <button class="btn" onclick="addToCart('2-Person Camping Tent')">Add to Cart</button>
+    
+  </div>
+
+  <!-- 2: Trekking Pole -->
+  <div class="card">
+    <img src="https://rukminim2.flixcart.com/image/480/480/xif0q/trekking-pole/9/m/i/3-hfy-walking-stick-anti-slip-handle-adjustable-cane-for-travel-original-imah2m42cwwthtb6.jpeg?q=90">
+    <div class="title">Adjustable Trekking Pole</div>
+    <div class="price">₹1,199</div>
+    <button class="btn" onclick="addToCart('Adjustable Trekking Pole')">Add to Cart</button>
+  </div>
+
+  <!-- 3: Headlamp -->
+  <div class="card">
+    <img src="https://m.media-amazon.com/images/I/61ptvGLJAXL._AC_UF894,1000_QL80_.jpg">
+    <div class="title">Rechargeable LED Headlamp</div>
+    <div class="price">₹399</div>
+    <button class="btn" onclick="addToCart('Rechargeable LED Headlamp')">Add to Cart</button>
+  </div>
+
+  <!-- 4: Water Bottle -->
+  <div class="card">
+    <img src="https://m.media-amazon.com/images/I/71wFyZlg58L.jpg">
+    <div class="title">Insulated Steel Water Bottle</div>
+    <div class="price">₹799</div>
+    <button class="btn" onclick="addToCart('Insulated Steel Water Bottle')">Add to Cart</button>
+  </div>
+
+  <!-- 5: Camping Stove -->
+  <div class="card">
+    <img src="https://m.media-amazon.com/images/I/619sEd2ApmL.jpg">
+    <div class="title">Portable Camping Gas Stove</div>
+    <div class="price">₹1,499</div>
+    <button class="btn" onclick="addToCart('Portable Camping Gas Stove')">Add to Cart</button>
+  </div>
+
+  <!-- 6: Sleeping Bag -->
+  <div class="card">
+    <img src="https://m.media-amazon.com/images/I/71x5gxxeY7L._AC_UF894,1000_QL80_.jpg">
+    <div class="title">Sleeping Bag – Cold Weather</div>
+    <div class="price">₹4,299</div>
+    <button class="btn" onclick="addToCart('Sleeping Bag – Cold Weather')">Add to Cart</button>
+  </div>
+
+  <!-- 7: Multi-tool -->
+  <div class="card">
+    <img src="https://m.media-amazon.com/images/I/51z1qP04DVL._AC_UF350,350_QL80_.jpg">
+    <div class="title">Stainless Steel Multi-tool</div>
+    <div class="price">₹999</div>
+    <button class="btn" onclick="addToCart('Stainless Steel Multi-tool')">Add to Cart</button>
+  </div>
+
+  <!-- 8: Rope -->
+  <div class="card">
+    <img src="https://m.media-amazon.com/images/I/61OD18mURTL.jpg">
+    <div class="title">10m Heavy Duty Rope</div>
+    <div class="price">₹499</div>
+    <button class="btn" onclick="addToCart('10m Heavy Duty Rope')">Add to Cart</button>
+  </div>
+
+  <!-- 9: Cookware Set -->
+  <div class="card">
+    <img src="https://images-cdn.ubuy.co.in/667b8471072ce14f560e2b44-17pcs-camping-cookware-mess-kit.jpg">
+    <div class="title">Camping Cookware Kit</div>
+    <div class="price">₹1,899</div>
+    <button class="btn" onclick="addToCart('Camping Cookware Kit')">Add to Cart</button>
+  </div>
+
+  <!-- 10: First Aid Kit -->
+  <div class="card">
+    <img src="https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcQK1MblW1DijO9IcRgX1RAQrkw5e8xCoSyHu7eytO9A7KtYHcdQsdSKh7O1PhNXHIkwkncEwm6QcLX7idcCo1EJ40MXPTXlKphbwnIhfsfP0X8bxsIbONsW8g">
+    <div class="title">Trekking First Aid Kit</div>
+    <div class="price">₹699</div>
+    <button class="btn" onclick="addToCart('Trekking First Aid Kit')">Add to Cart</button>
+  </div>
+
+</div>
+<header>
+  <h1>Men's Clothing & Gear</h1>
+</header>
+
+<!-- ✅ Search bar for this page -->
+<div style="text-align:center; margin-top:15px;">
+  <input 
+    type="text" 
+    id="pageSearchInput" 
+    placeholder="Search in men's products..."
+    style="padding:8px; width:220px; border-radius:4px; border:1px solid #ccc;"
+  >
+  <button 
+    onclick="filterCards()" 
+    style="padding:8px 14px; border:none; border-radius:4px; background:#003366; color:white; cursor:pointer;"
+  >
+    Search
+  </button>
+</div>
+
+<script>
+  function addToCart(product) {
+    alert(product + " has been added to cart !");
+  }
+  
+  function filterCards() {
+    const query = document.getElementById("pageSearchInput").value
+      .trim()
+      .toLowerCase();
+
+    const cards = document.querySelectorAll(".card");
+
+    cards.forEach(card => {
+      const titleEl = card.querySelector(".title");
+      const titleText = titleEl ? titleEl.textContent.toLowerCase() : "";
+
+      if (query === "" || titleText.includes(query)) {
+        card.style.display = "block";   // show
+      } else {
+        card.style.display = "none";    // hide
+      }
+    });
+  }
+
+  // Optional: live search while typing
+  document.addEventListener("DOMContentLoaded", () => {
+    const input = document.getElementById("pageSearchInput");
+    if (input) {
+      input.addEventListener("keyup", filterCards);
+    }
+  });
+</script>
+
+  
+</script>
+
+</body>
+</html>
