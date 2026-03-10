@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> Wild Adventure </title>
+
+  <!-- FAVICON (change this later to a proper URL or relative path) -->
+  <link rel="icon" type="image/png" href="Image/logo.png">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: Arial, sans-serif;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    /* =TOP BROWN LINE ============= */
+    .top-strip {
+      width: 100%;
+      height: 10px;
+      background: #8B4513;
+    }
+
+    /* ================= HEADER ================= */
+    header {
+      background: #fff;
+      border-bottom: 1px solid #ddd;
+      padding: 1rem 0;
+      position: sticky;
+      top: 10px;
+      z-index: 1000;
+    }
+
+    header .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    /* LOGO */
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .logo img {
+      height: 140px;
+      width: auto;
+      border-radius: 50%;
+    }
+
+    .logo span {
+      font-size: 1.8rem;
+      font-weight: bold;
+      color: #333;
+    }
+
+    /* NAVIGATION BUTTONS */
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1.2rem;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: white;
+      font-weight: 600;
+      background: #8B4513;
+      padding: 8px 18px;
+      border-radius: 8px;
+      transition: 0.3s;
+    }
+
+    nav ul li a:hover {
+      background: #A0522D;
+    }
+
+    /* SEARCH BAR */
+    .search-container {
+      display: flex;
+      align-items: center;
+      background: #f3f3f3;
+      padding: 6px 12px;
+      border-radius: 25px;
+      border: 1px solid #ccc;
+    }
+
+    .search-container input {
+      border: none;
+      outline: none;
+      background: transparent;
+      padding: 6px;
+      width: 160px;
+      font-size: 0.9rem;
+    }
+
+    .search-container button {
+      background: #ff7e00;
+      border: none;
+      padding: 6px 14px;
+      border-radius: 20px;
+      color: #fff;
+      cursor: pointer;
+      font-size: 0.9rem;
+    }
+
+    .search-container button:hover {
+      background: #e56f00;
+    }
+
+    /* HERO */
+    .hero {
+      background: #000 url('https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1600&q=60') center/cover no-repeat;
+      height: 60vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: white;
+      padding: 2rem;
+    }
+
+    .hero h2 { font-size: 3rem; margin-bottom: 1rem; }
+    .hero p { font-size: 1.2rem; margin-bottom: 1.5rem; }
+
+    .hero .btn {
+      background: #ff7e00;
+      color: white;
+      padding: 0.7rem 1.4rem;
+      text-decoration: none;
+      border-radius: 5px;
+      font-size: 1.1rem;
+    }
+
+    /* PRODUCT GRID */
+    .best-sellers { margin-top: 3rem; }
+
+    .best-sellers h3 {
+      text-align: center;
+      font-size: 2rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+    }
+
+    .product-card {
+      border: 1px solid #ccc;
+      padding: 1rem;
+      text-align: center;
+      border-radius: 8px;
+      background: #fff;
+      transition: 0.3s;
+    }
+
+    .product-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+    }
+
+    .product-card img {
+      width: 100%;
+      height: 230px;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem 0;
+      margin-top: 3rem;
+      background: #f4f4f4;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="top-strip"></div>
+
+  <header>
+    <div class="container">
+      <div class="logo">
+        <img src="Image/logo.png" alt="Wild Adventure Logo">
+        <span>Wild Adventure</span>
+      </div>
+
+      <nav>
+        <ul>
+          <li><a href="men.html">Men</a></li>
+          <li><a href="women.html">Women</a></li>
+          <li><a href="trek.html">Trekking</a></li>
+        </ul>
+      </nav>
+
+      <!--  Add IDs so JS can access elements -->
+      <div class="search-container">
+        <input type="text" id="searchInput" placeholder="Search gear...">
+        <button id="searchBtn">Search</button>
+      </div>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div>
+      <h2>Explore the Outdoors</h2>
+      <p>Gear up for your next adventure.</p>
+      <a href="#gear-list" class="btn">Shop Now</a>
+    </div>
+  </section>
+
+  <section class="best-sellers" id="gear-list">
+    <h3>Best Sellers</h3>
+    <div class="container">
+      <div class="product-grid" id="productGrid"></div>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2025 AdventureGear. All rights reserved.</p>
+  </footer>
+
+  <!-- =================== JAVASCRIPT =================== -->
+  <script>
+    // Product list
+    const products = [
+      { id: 1, name: "Trail Running Shoes", price: "₹7,999", img: "https://wildcraft.com/media/catalog/product/3/_/3_3146.jpg?width=960" },
+      { id: 2, name: "Waterproof Jacket", price: "₹3,999", img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS4zFL5ejAv2zXbPzXPW9J32oHMGtsYaVqdig&s"},
+      { id: 3, name: "Camping Backpack 45L", price: "₹5,499", img: "https://rukminim2.flixcart.com/image/368/490/xif0q/rucksack/u/f/d/-original-imahfrk7qwz5fbkp.jpeg?q=90&crop=false" },
+      { id: 4, name: "Sleeping Bag Ultra Warm", price: "₹4,299", img: "https://m.media-amazon.com/images/I/71x5gxxeY7L._AC_UF894,1000_QL80_.jpg" },
+      { id: 5, name: "Stainless Steel Multi-tool", price: "₹999", img: "https://m.media-amazon.com/images/I/51z1qP04DVL._AC_UF350,350_QL80_.jpg" },
+      { id: 6, name: "Portable Camping Gas Stove", price: "₹1,499", img: "https://m.media-amazon.com/images/I/619sEd2ApmL.jpg" },
+      { id: 7, name: "T-Shirt Mens Blue Dry Fit Activewear Ultra-Light T-Shirt", price: "₹499", img: "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcR3WPnnmG90TdhrVYOZPBdsIBrE3AZaM971FiPCcuoofy7qibnjzNem-zl1BR7Pbm-qzEmO5z3esJcxrZgBsZ52AiUmJyNdr9sZvtADAxoQuYVFAte4kMmL" },
+      { id: 8, name: "Gloves", price: "₹699", img: "https://contents.mediadecathlon.com/p2573103/ada9288d07a53ad6914050cf6a87a2e9/p2573103.jpg" }
+
+    ];
+
+    // Render products based on a list
+    function renderProducts(list) {
+      const grid = document.getElementById("productGrid");
+      grid.innerHTML = ""; // clear previous cards
+
+      if (list.length === 0) {
+        grid.innerHTML = "<p>No products found for this search.</p>";
+        return;
+      }
+
+      list.forEach(prod => {
+        const card = document.createElement("div");
+        card.className = "product-card";
+
+        card.innerHTML = `
+          <img src="${prod.img}" alt="${prod.name}">
+          <h4>${prod.name}</h4>
+          <p>${prod.price}</p>
+          <button onclick="addToCart(${prod.id})">Add to Cart</button>
+        `;
+
+        grid.appendChild(card);
+      });
+    }
+
+    function addToCart(id) {
+      const item = products.find(p => p.id === id);
+      alert(item.name + " added to cart!");
+    }
+
+    //  SEARCH FUNCTION
+    function handleSearch() {
+      const query = document.getElementById("searchInput").value.trim().toLowerCase();
+
+      if (query === "") {
+        // show all
+        renderProducts(products);
+        return;
+      }
+
+      const filtered = products.filter(p =>
+        p.name.toLowerCase().includes(query)
+      );
+
+      renderProducts(filtered);
+    }
+
+    // Attach events
+    document.addEventListener("DOMContentLoaded", () => {
+      renderProducts(products); // show all initially
+
+      const searchBtn = document.getElementById("searchBtn");
+      const searchInput = document.getElementById("searchInput");
+
+      searchBtn.addEventListener("click", handleSearch);
+
+      // Press Enter to search
+      searchInput.addEventListener("keypress", (e) => {
+        if (e.key === "Enter") {
+          handleSearch();
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>
